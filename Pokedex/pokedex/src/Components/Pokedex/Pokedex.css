@@ -1,0 +1,19 @@
+.pokedex-ul {
+  list-style: none;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.pokedex-li {
+  display: inline-block;
+  width: 250px;
+  margin: 50px 5px 100px 5px;
+  border: 1px solid #ebebeb;
+}
+
+.pokedex-winner-banner {
+  width: 300px;
+  margin: 20px auto 0 auto;
+  color: green;
+  font-weight: bold;
+}

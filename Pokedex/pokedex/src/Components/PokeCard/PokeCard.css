@@ -1,0 +1,20 @@
+.pokecard-container {
+  text-align: center;
+  box-shadow: 10px 10px 5px gray;
+  padding: 5px;
+  line-height: 5px;
+}
+
+.pokecard-img-container {
+  margin: 5px auto 0 auto;
+  background-color: #ebebeb;
+  padding: 5px;
+  width: 90%;
+}
+.pokecard-img {
+  transition: transform 0.5s;
+}
+
+.pokecard-img:hover {
+  transform: scale(1.2);
+}
