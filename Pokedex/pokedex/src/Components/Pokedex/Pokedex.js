@@ -7,33 +7,40 @@ class Pokedex extends Component {
     this.state = {
       winner: ''
     };
-  }
-  componentDidMount() {
-    const r = this.refs;
-    const firstHand = [];
-    const secondHand = [];
-    for (let key in r) {
-      if (firstHand.length < 4) {
-        firstHand.push(r[key].childNodes[0].dataset.exp);
+
+    this.getWinner = function(arr) {
+      const firstHand = [
+        arr[0].base_experience,
+        arr[1].base_experience,
+        arr[2].base_experience,
+        arr[3].base_experience
+      ];
+      const secondHand = [
+        arr[4].base_experience,
+        arr[5].base_experience,
+        arr[6].base_experience,
+        arr[7].base_experience
+      ];
+      let firstHandTotal = firstHand.reduce((t, n) => {
+        return parseInt(t) + parseInt(n);
+      });
+      let secondHandTotal = secondHand.reduce((t, n) => {
+        return parseInt(t) + parseInt(n);
+      });
+      if (firstHandTotal > secondHandTotal) {
+        this.setState({ winner: 'Winner: First Hand' });
+      } else if (secondHandTotal > firstHandTotal) {
+        this.setState({ winner: 'Winner: Second Hand' });
       } else {
-        secondHand.push(r[key].childNodes[0].dataset.exp);
+        this.setState({ winner: 'Tie' });
       }
-    }
-    let firstHandTotal = firstHand.reduce((t, n) => {
-      return parseInt(t) + parseInt(n);
-    });
-    let secondHandTotal = secondHand.reduce((t, n) => {
-      return parseInt(t) + parseInt(n);
-    });
-    if (firstHandTotal > secondHandTotal) {
-      this.setState({ winner: 'Winner: First Hand' });
-    } else if (secondHandTotal > firstHandTotal) {
-      this.setState({ winner: 'Winner: Second Hand' });
-    } else {
-      this.setState({ winner: 'Tie' });
-    }
-    console.log('firstHand', firstHandTotal);
-    console.log('secondHand', secondHandTotal);
+      console.log('firstHand exp total:', firstHandTotal);
+      console.log('secondHand exp total:', secondHandTotal);
+    };
+  }
+
+  componentDidMount() {
+    this.getWinner(this.props.pokeList);
   }
   render() {
     const pokeList = this.props.pokeList;
