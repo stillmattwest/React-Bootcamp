@@ -19,7 +19,7 @@ class StateClicker extends Component{
 
     getRandom = () => {
         let max = 10;
-        let rand = (1+(Math.floor(Math.random() * max)));
+        let rand = ((Math.floor(Math.random() * max))+1);
         return rand;
     }
 

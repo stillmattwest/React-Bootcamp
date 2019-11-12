@@ -42,3 +42,6 @@ And there you go.
 A couple of things to remember: The first is that setState is asynchronous. React determines the best time to setState because when it does the entire component is going to re-render.
 
 The second thing is that there are a bunch of overloads for setState. You can pass callbacks to it, etc. This is covered in the React documentation.
+
+## Downward Dataflow
+A common pattern in React is to use state as props. In this pattern, parent components are more stateful, and as they track state changes they pass parts of their state to non-stateful child components as props. This idea of moving from a more stateful parent to a less-stateful child is called **downward data flow**.
