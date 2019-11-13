@@ -1,0 +1,10 @@
+.die-span {
+  font-size: 200px;
+  position: relative;
+  top: 25px;
+}
+
+.die {
+  margin: 0 25px 0 25px;
+  color: #7b6cd3;
+}
