@@ -5,7 +5,13 @@ class Die extends Component {
   render() {
     return (
       <span className='die-span'>
-        <i className={'die' + ' ' + this.props.value}></i>
+        <i
+          className={
+            this.props.rolling
+              ? 'die' + ' ' + this.props.value + ' ' + 'die-shake'
+              : 'die' + ' ' + this.props.value
+          }
+        ></i>
       </span>
     );
   }

@@ -8,3 +8,28 @@
   margin: 0 25px 0 25px;
   color: #7b6cd3;
 }
+
+.die-shake {
+  animation: shake 0.2s;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(20deg);
+  }
+  20% {
+    transform: rotate(-20deg);
+  }
+  40% {
+    transform: rotate(-20deg);
+  }
+  60% {
+    transform: rotate(20deg);
+  }
+  80% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(-20deg);
+  }
+}

@@ -11,7 +11,6 @@ class GameBoard extends Component {
 
   rollDice = () => {
     let roll = function() {
-      console.log('rolling!');
       const rand = Math.floor(1 + Math.random() * 6);
       let result = '';
       switch (rand) {
@@ -36,22 +35,34 @@ class GameBoard extends Component {
       return result;
     };
 
-    return this.setState({
-      dieOneVal: roll(),
-      dieTwoVal: roll()
-    });
+    const that = this;
+    setTimeout(() => {
+      that.setState({
+        rolling: true
+      });
+    }, 100);
+    setTimeout(() => {
+      that.setState({
+        rolling: false,
+        dieOneVal: roll(),
+        dieTwoVal: roll()
+      });
+    }, 310);
+
+    // const that = this;
+    // setTimeout(that.setState({ rolling: false }), 1000);
   };
 
   render() {
     return (
       <div className='gameboard-container'>
-        <div className='gameboard-dice-display'>
-          <Die value={this.state.dieOneVal} />
-          <Die value={this.state.dieTwoVal} />
+        <div className={'gameboard-dice-display'}>
+          <Die value={this.state.dieOneVal} rolling={this.state.rolling} />
+          <Die value={this.state.dieTwoVal} rolling={this.state.rolling} />
         </div>
         <div className='gameboard-btn-area'>
           <button onClick={this.rollDice} className='gameboard-roll-btn'>
-            Roll Dice!
+            {this.state.rolling ? '...rolling' : 'roll dice!'}
           </button>
         </div>
       </div>
