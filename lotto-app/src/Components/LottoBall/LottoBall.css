@@ -1,0 +1,12 @@
+.lottoball-ball {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: salmon;
+  border: 1px solid gray;
+}
+
+.lottoball-number {
+  font-weight: bold;
+  font-size: 1.2em;
+}

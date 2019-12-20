@@ -1,0 +1,18 @@
+.lottoboard-container {
+  border: 1px solid gray;
+  border-radius: 10px;
+  width: 600px;
+  height: 200px;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.lottoboard-ball-ul {
+  list-style: none;
+  margin-left: -20px;
+}
+
+.lottoboard-ball-ul li {
+  display: inline-block;
+  margin-right: 20px;
+}

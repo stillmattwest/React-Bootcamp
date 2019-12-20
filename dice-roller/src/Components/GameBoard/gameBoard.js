@@ -47,10 +47,7 @@ class GameBoard extends Component {
         dieOneVal: roll(),
         dieTwoVal: roll()
       });
-    }, 310);
-
-    // const that = this;
-    // setTimeout(that.setState({ rolling: false }), 1000);
+    }, 315);
   };
 
   render() {
@@ -61,7 +58,11 @@ class GameBoard extends Component {
           <Die value={this.state.dieTwoVal} rolling={this.state.rolling} />
         </div>
         <div className='gameboard-btn-area'>
-          <button onClick={this.rollDice} className='gameboard-roll-btn'>
+          <button
+            onClick={this.rollDice}
+            disabled={this.state.rolling}
+            className='gameboard-roll-btn'
+          >
             {this.state.rolling ? '...rolling' : 'roll dice!'}
           </button>
         </div>

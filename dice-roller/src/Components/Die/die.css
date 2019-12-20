@@ -10,11 +10,11 @@
 }
 
 .die-shake {
-  animation: shake 0.2s;
+  animation: shake 0.25s;
 }
 
 @keyframes shake {
-  0% {
+  from {
     transform: rotate(20deg);
   }
   20% {
@@ -29,7 +29,7 @@
   80% {
     transform: rotate(-20deg);
   }
-  100% {
+  to {
     transform: rotate(-20deg);
   }
 }
