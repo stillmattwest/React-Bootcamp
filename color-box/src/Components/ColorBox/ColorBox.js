@@ -31,19 +31,21 @@ class ColorBox extends Component {
     return colorArray[color];
   };
 
-  handleClick = () => {
+  changeColor = () => {
     let color = this.getRandomColor();
     this.setState(st => {
       return { ...st, color: color };
     });
   };
 
+  handleClick = () => {
+    this.changeColor();
+  };
+
   componentDidMount() {
-    let color = this.getRandomColor();
-    this.setState(st => {
-      return { ...st, color: color };
-    });
+    this.changeColor();
   }
+
   render() {
     return (
       <div
