@@ -1,8 +1,8 @@
 .lottoboard-container {
-  border: 1px solid gray;
+  border: 1px solid #4F5D75;
   border-radius: 10px;
   width: 600px;
-  height: 200px;
+  height: 225px;
   margin: 100px auto;
   text-align: center;
 }
@@ -15,4 +15,14 @@
 .lottoboard-ball-ul li {
   display: inline-block;
   margin-right: 20px;
+}
+
+.lottoboard-button{
+  padding:5px;
+  font-size:24px;
+  margin-top:15px;
+  border-radius: 10px;
+  outline:none;
+  border:1px solid #4F5D75;
+  background-color:#BFC0C0;
 }

@@ -3,37 +3,42 @@ import './LottoBoard.css';
 import LottoBall from '../LottoBall/LottoBall';
 
 class LottoBoard extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       nums: []
     };
   }
 
   getRandom = max => {
-    return Math.floor(Math.random() * max) + 1;
+    return Math.floor(Math.random() * this.props.max) + 1;
   };
 
-  componentDidMount() {
+  generateNumbers = () => {
     let numArray = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < this.props.count; i++) {
       numArray.push(this.getRandom(40));
     }
-    this.setState({ nums: numArray });
+    this.setState(st => {return{...st,nums:numArray}});
   }
+
+  componentDidMount() {
+    this.generateNumbers();
+  }
+
 
   render() {
     return (
       <div className='lottoboard-container'>
-        <h2>Lotto</h2>
+        <h1>Lotto</h1>
         <div className='lottoboard-ball-container'></div>
         <ul className='lottoboard-ball-ul'>
           {this.state.nums.map((e, i) => {
-            return <LottoBall key={`lottoball-${i}`} num={i} />;
+            return <LottoBall key={`lottoball-${i}`} num={e} />;
           })}
         </ul>
         <div className='lottoboard-button-container'>
-          <button className='lottoboard-button'>Generate</button>
+          <button className='lottoboard-button' onClick={this.generateNumbers}>Generate</button>
         </div>
       </div>
     );
