@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'BeautySchoolDropoutII';
+  src: url('../../Fonts/BeautySchoolDropoutII.woff') format('woff');
+}
+
+:root {
+  /* Base font size */
+  font-size: 10px;
+
+  /* Set neon color */
+  --neon-text-color: #f40;
+  --neon-border-color: #08f;
+}
+
+.board-container {
+  width: 800px;
+  height: 800px;
+  margin: 100px auto;
+}
+
+.board-table {
+  margin: auto;
+}
+
+.board-title {
+  width: 800px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+  font-family: 'BeautySchoolDropoutII', sans-serif;
+  font-size: 6em;
+}
+
+.board-neon-red {
+  color: var(--neon-text-color);
+  animation: flicker 1.5s infinite alternate;
+}
+
+.board-neon-yellow {
+  color: var(--neon-border-color);
+  text-shadow: 0 0 1vw #1041ff, 0 0 3vw #1041ff, 0 0 10vw #1041ff,
+    0 0 10vw #1041ff, 0 0 0.4vw #8bfdfe, 0.5vw 0.5vw 0.1vw #147280;
+  color: #28d7fe;
+}
+
+.board-title :focus {
+  outline: none;
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    text-shadow: 0 0 1vw #fa1c16, 0 0 3vw #fa1c16, 0 0 10vw #fa1c16,
+      0 0 10vw #fa1c16, 0 0 0.4vw #fed128, 0.5vw 0.5vw 0.1vw #806914;
+    color: #fed128;
+  }
+  50% {
+    text-shadow: 0 0 0.5vw #800e0b, 0 0 1.5vw #800e0b, 0 0 5vw #800e0b,
+      0 0 5vw #800e0b, 0 0 0.2vw #800e0b, 0.5vw 0.5vw 0.1vw #40340a;
+    color: #806914;
+  }
+}
