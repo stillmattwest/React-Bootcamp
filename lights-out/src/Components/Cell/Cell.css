@@ -1,0 +1,10 @@
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #2f2f2f;
+  border: 1px solid gray;
+}
+
+.cell-lit {
+  background-color: #03c9b7;
+}
