@@ -70,6 +70,9 @@ class Board extends Component {
   };
 
   toggleCell = (row, col) => {
+    if (this.state.won) {
+      return;
+    }
     let newGameState = JSON.parse(JSON.stringify(this.state.gameState));
     // toggle cell
     newGameState[row][col] = newGameState[row][col] ? 0 : 1;
@@ -90,20 +93,49 @@ class Board extends Component {
       newGameState[row][col + 1] = newGameState[row][col + 1] ? 0 : 1;
     }
     this.setState({ gameState: JSON.parse(JSON.stringify(newGameState)) });
+    this.checkWin();
+  };
+
+  checkWin = () => {
+    let won = true;
+    this.state.gameState.forEach(row => {
+      row.forEach(cell => {
+        if (cell) {
+          won = false;
+        }
+      });
+    });
+    if (won) {
+      this.setState({ won: won });
+    }
   };
 
   render() {
-    return (
-      <div className='board-container'>
-        <h2 className='board-title'>
-          <span className='board-neon-red'>Lights</span>
-          <span className='board-neon-yellow'>Out</span>
-        </h2>
-        <table className='board-table'>
-          <tbody>{this.generateBoard()}</tbody>
-        </table>
-      </div>
-    );
+    if (this.state.won) {
+      return (
+        <div className='board-container'>
+          <h2 className='board-title win-message'>
+            <span className='board-neon-red'>You</span>
+            <span className='board-neon-blue'>Win</span>
+          </h2>
+          <table className='board-table'>
+            <tbody>{this.generateBoard()}</tbody>
+          </table>
+        </div>
+      );
+    } else {
+      return (
+        <div className='board-container'>
+          <h2 className='board-title'>
+            <span className='board-neon-red'>Lights</span>
+            <span className='board-neon-blue'>Out</span>
+          </h2>
+          <table className='board-table'>
+            <tbody>{this.generateBoard()}</tbody>
+          </table>
+        </div>
+      );
+    }
   }
 }
 

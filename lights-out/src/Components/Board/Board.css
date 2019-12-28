@@ -27,7 +27,7 @@
   margin: 0 auto 50px auto;
   text-align: center;
   font-family: 'BeautySchoolDropoutII', sans-serif;
-  font-size: 6em;
+  font-size: 8em;
 }
 
 .board-neon-red {
@@ -35,10 +35,10 @@
   animation: flicker 1.5s infinite alternate;
 }
 
-.board-neon-yellow {
+.board-neon-blue {
   color: var(--neon-border-color);
-  text-shadow: 0 0 1vw #1041ff, 0 0 3vw #1041ff, 0 0 10vw #1041ff,
-    0 0 10vw #1041ff, 0 0 0.4vw #8bfdfe, 0.5vw 0.5vw 0.1vw #147280;
+  text-shadow: 0 0 10vw #1041ff, 0 0 3vw #1041ff, 0 0 10vw #1041ff,
+    0 0 10vw #1041ff, 0 0 0.4vw #8bfdfe, 0vw 0vw 0.1vw #147280;
   color: #28d7fe;
 }
 
@@ -58,4 +58,12 @@
       0 0 5vw #800e0b, 0 0 0.2vw #800e0b, 0.5vw 0.5vw 0.1vw #40340a;
     color: #806914;
   }
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.win-message {
+  font-size: 8em;
 }
