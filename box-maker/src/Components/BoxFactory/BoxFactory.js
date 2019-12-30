@@ -33,6 +33,7 @@ class BoxFactory extends Component {
   render() {
     return (
       <div>
+        <h2>Box Maker!</h2>
         <form onSubmit={this.handleSubmit}>
           <label htmlFor='height'>Height: </label>
           <input
