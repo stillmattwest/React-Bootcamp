@@ -7,11 +7,13 @@ class ListItem extends Component {
     return (
       <li className="listitem-li">
         Remember to do this{" "}
-        <span className="listitem-icon">
-          <FontAwesomeIcon icon="faEdit" />
-        </span>
-        <span className="listitem-icon">
-          <FontAwesomeIcon icon="faTrash" />
+        <span className="listitem-icon-container">
+          <span className="listitem-icon">
+            <FontAwesomeIcon className="listitem-fa" icon="edit" />
+          </span>
+          <span className="listitem-icon">
+            <FontAwesomeIcon className="listitem-fa" icon="trash" />
+          </span>
         </span>
       </li>
     );

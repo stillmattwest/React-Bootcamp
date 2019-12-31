@@ -22,3 +22,11 @@
   margin-top: 25px;
   font-family: "Lato", sans-serif;
 }
+
+.todolist-list-item-ul {
+  width: 80%;
+  margin: 0 auto;
+}
+.todolist-list-item-ul li {
+  margin-bottom: 10px;
+}

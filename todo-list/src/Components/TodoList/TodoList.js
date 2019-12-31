@@ -6,7 +6,7 @@ class TodoList extends Component {
   render() {
     return (
       <div className="todolist-container">
-        <h2 className="todolist-title">Todo List</h2>
+        <h2 className="todolist-title">TODO LIST</h2>
         <div className="todolist-list-item-container">
           <ul className="todolist-list-item-ul">
             <ListItem />

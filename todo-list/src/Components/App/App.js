@@ -5,7 +5,7 @@ import { fab } from "@fortawesome/free-brands-svg-icons";
 import { faTrash, faEdit } from "@fortawesome/free-solid-svg-icons";
 import TodoList from "../TodoList/TodoList";
 
-// create font awesome library
+// create font awesome library to use in all components
 library.add(faTrash, faEdit);
 
 function App() {

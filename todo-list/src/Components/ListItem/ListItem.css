@@ -1,0 +1,18 @@
+.listitem-li {
+  list-style: none;
+  padding: 10px;
+  background-color: var(--todo-blue);
+}
+
+.listitem-icon-container {
+  width: 25%;
+  float: right;
+}
+
+.listitem-icon {
+  margin-left: 15px;
+}
+
+.listitem-fa:hover {
+  filter: drop-shadow(0 0 5px var(--todo-white));
+}
