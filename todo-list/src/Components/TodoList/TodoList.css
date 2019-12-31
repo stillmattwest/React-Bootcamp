@@ -1,7 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
 :root {
   --todo-blue: #5f758e;
   --todo-dark-gray: #333333;
   --todo-light-gray: #b4b8ab;
   --todo-white: #dad2d8;
   --todo-brown: #dcc48e;
+}
+
+.todolist-container {
+  height: 700px;
+  width: 500px;
+  background-color: var(--todo-dark-gray);
+  margin: 50px auto;
+  color: var(--todo-white);
+  text-align: center;
+}
+
+.todolist-title {
+  font-size: 3em;
+  margin-top: 25px;
+  font-family: "Lato", sans-serif;
 }

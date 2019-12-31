@@ -19,10 +19,11 @@
 
 .lottoboard-button{
   padding:5px;
-  font-size:24px;
+  font-size:18px;
   margin-top:15px;
   border-radius: 10px;
   outline:none;
   border:1px solid #4F5D75;
-  background-color:#BFC0C0;
+  background-color:#333745;
+  color:white;
 }

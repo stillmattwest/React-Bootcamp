@@ -10,14 +10,14 @@ class LottoBoard extends Component {
     };
   }
 
-  getRandom = max => {
+  getRandom = () => {
     return Math.floor(Math.random() * this.props.max) + 1;
   };
 
   generateNumbers = () => {
     let numArray = [];
     for (let i = 0; i < this.props.count; i++) {
-      numArray.push(this.getRandom(40));
+      numArray.push(this.getRandom());
     }
     this.setState(st => {return{...st,nums:numArray}});
   }
@@ -30,7 +30,7 @@ class LottoBoard extends Component {
   render() {
     return (
       <div className='lottoboard-container'>
-        <h1>Lotto</h1>
+        <h1>{this.props.title}</h1>
         <div className='lottoboard-ball-container'></div>
         <ul className='lottoboard-ball-ul'>
           {this.state.nums.map((e, i) => {

@@ -8,8 +8,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <LottoBoard count={6} max={40}/>
-        <LottoBoard count={4} max={10} />}
+        <LottoBoard count={6} max={40} title={"Lotto"}/>
+        <LottoBoard count={4} max={10} title={"Mini-Daily"} />}
       </div>
     );
   }
