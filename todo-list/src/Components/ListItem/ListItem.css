@@ -2,10 +2,39 @@
   list-style: none;
   padding: 10px;
   background-color: var(--todo-blue);
+  text-align: left;
+  font-family: "Lato", sans-serif;
+  font-size: 1.1em;
+}
+
+.listitem-li-editing {
+  list-style: none;
+  padding: 10px;
+  background-color: var(--todo-white);
+  color: var(--todo-dark-gray);
+  text-align: left;
+}
+
+.listitem-title {
+  width: 80%;
+  display: inline-block;
+}
+
+.listitem-li-editing input {
+  width: 100%;
+  border: none;
+  background-color: var(--todo-white);
+  outline: none;
+  font-family: "Lato", sans-serif;
+  font-size: 1.1em;
+}
+
+.listitem-li-editing input :focus {
+  outline: none;
 }
 
 .listitem-icon-container {
-  width: 25%;
+  width: 20%;
   float: right;
 }
 
