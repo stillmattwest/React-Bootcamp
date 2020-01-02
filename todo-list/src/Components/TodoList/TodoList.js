@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import "./TodoList.css";
-import ListItem from "../ListItem/ListItem";
-import uuid from "react-uuid";
+import React, { Component } from 'react';
+import './TodoList.css';
+import ListItem from '../ListItem/ListItem';
+import uuid from 'react-uuid';
 
 class TodoList extends Component {
   constructor(props) {
@@ -23,9 +23,10 @@ class TodoList extends Component {
     }
     if (!editing) {
       newListItems.push({
-        title: "",
+        title: '',
         complete: false,
         editing: true,
+        delete: false,
         id: uuid()
       });
     }
@@ -65,25 +66,32 @@ class TodoList extends Component {
     let newListItems = JSON.parse(JSON.stringify(this.state.listItems));
     for (let i = 0; i < newListItems.length; i++) {
       if (newListItems[i].id === id) {
-        newListItems.splice(i, 1);
+        // remove title and give delete class
+        newListItems[i].title = '';
+        newListItems[i].delete = true;
+        this.setState({ listItems: newListItems });
+        // remove item after 400 ms
+        setTimeout(() => {
+          newListItems.splice(i, 1);
+          this.setState({ listItems: newListItems });
+        }, 400);
       }
     }
-
-    this.setState({ listItems: newListItems });
   };
 
   render() {
     return (
-      <div className="todolist-container">
-        <h2 className="todolist-title">TODO LIST</h2>
-        <div className="todolist-list-item-container">
-          <ul className="todolist-list-item-ul">
+      <div className='todolist-container'>
+        <h2 className='todolist-title'>TODO LIST</h2>
+        <div className='todolist-list-item-container'>
+          <ul className='todolist-list-item-ul'>
             {this.state.listItems.map(e => {
               return (
                 <ListItem
                   title={e.title}
                   complete={e.complete}
                   editing={e.editing}
+                  delete={e.delete}
                   id={e.id}
                   key={e.id}
                   toggleEdit={this.toggleEdit}
@@ -94,10 +102,10 @@ class TodoList extends Component {
             })}
           </ul>
         </div>
-        <div className="todolist-addbutton-container">
+        <div className='todolist-addbutton-container'>
           <button
-            type="button"
-            className="todolist-button"
+            type='button'
+            className='todolist-button'
             onClick={this.addListItem}
           >
             Add Item

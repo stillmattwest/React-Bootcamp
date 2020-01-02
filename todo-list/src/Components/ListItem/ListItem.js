@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import "./ListItem.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { Component } from 'react';
+import './ListItem.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class ListItem extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class ListItem extends Component {
   }
 
   handleKeyUp = e => {
-    if (e.key === "Enter") {
+    if (e.key === 'Enter') {
       this.props.toggleEdit(e.target.id);
     } else {
       this.props.handleListItemChange(e.target.id, e.target.value);
@@ -34,12 +34,12 @@ class ListItem extends Component {
   render() {
     return this.props.editing ? (
       // editable item
-      <li className="listitem-li-editing">
-        <span className="listitem-title">
+      <li className='listitem-li-editing'>
+        <span className='listitem-title'>
           <input
             ref={this.input}
-            className="listitem-title-editing"
-            type="text"
+            className='listitem-title-editing'
+            type='text'
             id={this.props.id}
             onKeyUp={this.handleKeyUp}
             placeholder={this.props.title}
@@ -48,22 +48,24 @@ class ListItem extends Component {
       </li>
     ) : (
       // non-editable item
-      <li className="listitem-li">
-        <span className="listitem-title">{this.props.title}</span>
-        <span className="listitem-icon-container">
-          <span className="listitem-icon">
+      <li
+        className={`listitem-li ${this.props.delete ? 'listitem-remove' : ''}`}
+      >
+        <span className='listitem-title'>{this.props.title}</span>
+        <span className='listitem-icon-container'>
+          <span className='listitem-icon'>
             <FontAwesomeIcon
-              className="listitem-fa"
-              icon="edit"
+              className='listitem-fa'
+              icon={`${this.props.delete ? '' : 'edit'}`}
               onClick={() => {
                 this.props.toggleEdit(this.props.id);
               }}
             />
           </span>
-          <span className="listitem-icon">
+          <span className='listitem-icon'>
             <FontAwesomeIcon
-              className="listitem-fa"
-              icon="trash"
+              className='listitem-fa'
+              icon={`${this.props.delete ? '' : 'trash'}`}
               onClick={() => this.handleDelete(this.props.id)}
             />
           </span>
