@@ -20,6 +20,10 @@ class ListItem extends Component {
     }
   }
 
+  componentWillUnmount() {
+    console.log('Unmounted!');
+  }
+
   handleKeyUp = e => {
     if (e.key === 'Enter') {
       this.props.toggleEdit(e.target.id);
