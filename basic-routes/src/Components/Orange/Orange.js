@@ -5,7 +5,7 @@ class Orange extends Component {
   render() {
     return (
       <div className='orange'>
-        <h1>This is Orange!</h1>
+        <h1>This is ORANGE!</h1>
       </div>
     );
   }

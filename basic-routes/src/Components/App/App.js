@@ -9,7 +9,6 @@ class App extends Component {
   render() {
     return (
       <div className='App'>
-        <h1>This is app</h1>
         <Route path='/apple' component={Apple} />
         <Route path='/orange' component={Orange} />
         <Route path='/pear' component={Pear} />
