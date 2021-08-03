@@ -12,10 +12,12 @@ export default function TodoList(props) {
             <List>
                 {props.todos.map(todo => {
                     return (
-                        <ListItem>
-                            <ListItemText key={uuid()}>{todo.task}</ListItemText>
+                        <>
+                            <ListItem>
+                                <ListItemText key={uuid()}>{todo.task}</ListItemText>
+                            </ListItem>
                             <Divider />
-                        </ListItem>
+                        </>
                     )
 
                 })}

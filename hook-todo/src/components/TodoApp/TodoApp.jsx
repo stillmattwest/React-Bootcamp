@@ -5,6 +5,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Grid from "@material-ui/core/Grid";
 import TodoList from "../TodoList/TodoList";
+import TodoForm from "../TodoForm/TodoForm";
 import './TodoApp.css';
 
 export default function Todo() {
@@ -14,6 +15,9 @@ export default function Todo() {
         { id: 3, task: "Edit the blog", completed: false }
     ];
     const [todos, setTodos] = useState(starterTodos);
+    const addTodo = newTodoText => {
+        setTodos([...todos, { id: null, task: newTodoText, completed: false }]);
+    }
     return (
         <Paper style={{
             padding: 0,
@@ -28,7 +32,9 @@ export default function Todo() {
                     <Typography color='inherit'>TODOS WITH HOOKS (and Material UI)</Typography>
                 </Toolbar>
             </AppBar>
+            <TodoForm addTodo={addTodo} />
             <TodoList todos={todos} />
+
         </Paper>
     )
 }
