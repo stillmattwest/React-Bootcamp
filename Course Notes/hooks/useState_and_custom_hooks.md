@@ -106,4 +106,51 @@ export default Toggler;
 ```
 Okay, it's only a little simpler, but this is a very simple example. The cool thing is, we could now have ten different settings in this component that all needed toggles, and we could use just the one hook. That *really* cleans things up. React magic!
 
+## useInputState Example
+This is another example of a custom, reusable component.
+
+Here's the hook:
+
+```js
+import {useState} from "react";
+export default initialValue => {
+    const [value,setValue] = useState(initialValue);
+    const handleChange = e => {
+        setValue(e.target.value);
+    }
+    const reset = () => {
+        setValue("");
+    }
+
+    return [value,handleChange,reset];
+};
+```
+
+Here's the JSX
+```js
+import React from "react";
+import useInputState from "./hooks";
+
+export default function simpleFormInput(){
+    const [email,updateEmail,resetEmail] = useInputState("");
+    const [password,updatePassword,resetPassword] = useInputState("");
+    return(
+        <div>
+            <h1>Email: {email}</h1>
+            <h1>Password: {password}</h1>
+            <input type="text" value={email} onChange={updateEmail} />
+            <button onClick={resetEmail}>Reset</button>
+            <input type="text" value={password} onChange={updatePassword} />
+            <button onClick={resetPasswordl}>Reset</button>
+        </div>
+    )
+}
+```
+
+So... pretty clean little component. The useInputState hook allows us to create two stateful input components with very little code (and no additional code for the second input), and that's very cool. 
+
+Why you'd want to display the password as an H1 for everyone to see is a separate question.
+
+
+
 
