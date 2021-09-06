@@ -3,7 +3,7 @@ import Paper from "@material-ui/core/Paper";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import Todo from "../Todo.js/Todo";
-import { v4 as uuid } from "uuid";
+import { uuid } from "uuidv4";
 
 export default function TodoList(props) {
     return (
@@ -12,7 +12,7 @@ export default function TodoList(props) {
                 {props.todos.map(todo => {
                     return (
                         <>
-                            <Todo task={todo.task} key={todo.id} completed={todo.completed} key={uuid()} />
+                            <Todo task={todo.task} key={todo.id} id={todo.id} completed={todo.completed} key={uuid()} removeTodo={props.removeTodo} toggleCompleted={props.toggleCompleted} />
                             <Divider />
                         </>
                     )
