@@ -36,7 +36,7 @@ function HookTest() {
     return(
         <div>
             <h1>The Count is {counter}</h1>
-            <button onClick={()=> setCount({count +1})}/>
+            <button onClick={()=> setCounter({counter +1})}/>
         
         </div>
     )

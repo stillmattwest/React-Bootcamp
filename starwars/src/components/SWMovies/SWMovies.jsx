@@ -7,8 +7,8 @@ export default function SWMovies() {
     const [movieData, setMovieData] = useState({})
     // useEffect is triggered whenever there is a re-render
     useEffect(() => {
-        // to make an async, create an async function inside the useEffect hook
-        const getMovieData = async () => {
+        // to make an async effect, create an async function inside the useEffect hook
+        async function getMovieData() {
             const response = await axios.get(`https://swapi.dev/api/films/${number}`, { crossdomain: true });
             return response;
         }

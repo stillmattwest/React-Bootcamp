@@ -1,10 +1,9 @@
 import React from "react";
-import { v4 as uuid } from "uuid";
 import Paper from "@material-ui/core/Paper";
 import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
 import Divider from "@material-ui/core/Divider";
-import ListItemText from "@material-ui/core/ListItemText";
+import Todo from "../Todo.js/Todo";
+import { v4 as uuid } from "uuid";
 
 export default function TodoList(props) {
     return (
@@ -13,9 +12,7 @@ export default function TodoList(props) {
                 {props.todos.map(todo => {
                     return (
                         <>
-                            <ListItem>
-                                <ListItemText key={uuid()}>{todo.task}</ListItemText>
-                            </ListItem>
+                            <Todo task={todo.task} key={todo.id} completed={todo.completed} key={uuid()} />
                             <Divider />
                         </>
                     )

@@ -32,8 +32,13 @@ export default function Todo() {
                     <Typography color='inherit'>TODOS WITH HOOKS (and Material UI)</Typography>
                 </Toolbar>
             </AppBar>
-            <TodoForm addTodo={addTodo} />
-            <TodoList todos={todos} />
+            <Grid container justify='center'>
+                <Grid item xs={11} md={8} lg={4} style={{ marginTop: "1 rem" }}>
+                    <TodoForm addTodo={addTodo} />
+                    <TodoList todos={todos} />
+                </Grid>
+            </Grid>
+
 
         </Paper>
     )
