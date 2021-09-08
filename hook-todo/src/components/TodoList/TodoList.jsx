@@ -14,9 +14,7 @@ export default function TodoList({ todos, removeTodo, toggleCompleted, editTodo 
                         return (
                             <>
                                 <Todo
-                                    task={todo.task}
-                                    id={todo.id}
-                                    completed={todo.completed}
+                                    {...todo}
                                     key={todo.id}
                                     removeTodo={removeTodo}
                                     toggleCompleted={toggleCompleted}
